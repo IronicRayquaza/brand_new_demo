@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Interactive Website</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #1e1e2f, #2a2a40);
+      color: white;
+      overflow-x: hidden;
+    }
+
+    /* Navbar */
+    nav {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      padding: 15px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+    }
+
+    nav h1 {
+      color: #00f7ff;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #00f7ff;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .hero p {
+      margin: 20px 0;
+      font-size: 1.2rem;
+      opacity: 0.8;
+    }
+
+    .btn {
+      padding: 12px 25px;
+      background: #00f7ff;
+      border: none;
+      border-radius: 25px;
+      color: black;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px #00f7ff;
+    }
+
+    /* Cards Section */
+    .cards {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 80px 20px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(15px);
+      padding: 30px;
+      border-radius: 20px;
+      width: 250px;
+      text-align: center;
+      transition: 0.4s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 0 20px rgba(0, 247, 255, 0.5);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(255,255,255,0.05);
+      margin-top: 50px;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <h1>MySite</h1>
+    <div>
+      <a href="#home">Home</a>
+      <a href="#features">Features</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <h2>Welcome to Your Interactive Website</h2>
+    <p>Modern UI, smooth animations, and responsive design</p>
+    <button class="btn" onclick="scrollToSection()">Explore</button>
+  </section>
+
+  <!-- Cards -->
+  <section class="cards" id="features">
+    <div class="card">
+      <h3>⚡ Fast</h3>
+      <p>Lightning fast performance and smooth experience.</p>
+    </div>
+
+    <div class="card">
+      <h3>🎨 Stylish</h3>
+      <p>Modern UI with glassmorphism effects.</p>
+    </div>
+
+    <div class="card">
+      <h3>📱 Responsive</h3>
+      <p>Works perfectly on all devices.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <p>© 2026 Your Website | Built with ❤️</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    function scrollToSection() {
+      document.getElementById("features").scrollIntoView({
+        behavior: "smooth"
+      });
+    }
+  </script>
+
+</body>
+</html>
